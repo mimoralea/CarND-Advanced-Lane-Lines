@@ -266,7 +266,7 @@ def abs_sobel_thresh(img, orient='x', sobel_kernel=3, thresh=(0, 255)):
     binary = np.zeros_like(scaled_sobel)
     binary[(scaled_sobel >= thresh[0]) & (scaled_sobel <= thresh[1])] = 1
 
-    # 6) Return this mask as your binary_output_images/output_ image
+    # 6) Return this mask as your binary_output image
     return binary
 
 def hls_select(img, selection='l', thresh=(0, 255)):
@@ -775,7 +775,7 @@ font = cv2.FONT_HERSHEY_SIMPLEX
 cv2.putText(result, curvature_info, (500,600), font, 1,(255,255,255),2)
 cv2.putText(result, shift_info, (500,650), font, 1,(255,255,255),2)
 
-plot_side_by_side(udimg2, "Original", result, 'Final Output_Images/Output_')
+plot_side_by_side(udimg2, "Original", result, 'Final Output')
 ```
 
 
@@ -784,7 +784,7 @@ plot_side_by_side(udimg2, "Original", result, 'Final Output_Images/Output_')
 
 # Pipeline (video)
 
-**1. Provide a link to your final video output_images/output_. Your pipeline should perform reasonably well on the entire project video (wobbly lines are ok but no catastrophic failures that would cause the car to drive off the road!).**
+**1. Provide a link to your final video output. Your pipeline should perform reasonably well on the entire project video (wobbly lines are ok but no catastrophic failures that would cause the car to drive off the road!).**
 
 The following is the result for the project video:
 
@@ -1048,7 +1048,7 @@ font = cv2.FONT_HERSHEY_SIMPLEX
 cv2.putText(result, curvature_info, (500,600), font, 1,(255,255,255),2)
 cv2.putText(result, shift_info, (500,650), font, 1,(255,255,255),2)
 
-plot_side_by_side(udimg2, "Original", result, 'Final Output_Images/Output_')
+plot_side_by_side(myimg2, "Original", result, 'Final Output')
 ```
 
 
