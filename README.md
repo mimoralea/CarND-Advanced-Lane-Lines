@@ -132,7 +132,7 @@ plot_imgs(udimgs[0:3])
 ```
 
 
-![png](output_images/14_0.png)
+![png](output_images/output_14_0.png)
 
 
 This is a sample of a undistorted image:
@@ -145,7 +145,7 @@ plot_side_by_side(udimg, 'Provided Original Image', udundistorted, 'Provided Und
 ```
 
 
-![png](output_images/16_0.png)
+![png](output_images/output_16_0.png)
 
 
 # Pipeline (single images)
@@ -167,11 +167,11 @@ plot_side_by_side(udimg2, 'Original Image', und2, 'Undistorted Image')
 ```
 
 
-![png](output_images/20_0.png)
+![png](output_images/output_20_0.png)
 
 
 
-![png](output_images/20_1.png)
+![png](output_images/output_20_1.png)
 
 
 **2. Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.**
@@ -228,11 +228,11 @@ plot_side_by_side(org, 'Original Image', warp, 'Birds-eye image')
 ```
 
 
-![png](output_images/24_0.png)
+![png](output_images/output_24_0.png)
 
 
 
-![png](output_images/24_1.png)
+![png](output_images/output_24_1.png)
 
 
 ** 3. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image. Provide an example of a binary image result.**
@@ -266,7 +266,7 @@ def abs_sobel_thresh(img, orient='x', sobel_kernel=3, thresh=(0, 255)):
     binary = np.zeros_like(scaled_sobel)
     binary[(scaled_sobel >= thresh[0]) & (scaled_sobel <= thresh[1])] = 1
 
-    # 6) Return this mask as your binary_output_images/ image
+    # 6) Return this mask as your binary_output_images/output_ image
     return binary
 
 def hls_select(img, selection='l', thresh=(0, 255)):
@@ -326,11 +326,11 @@ plot_side_by_side(org, 'Original Image', binary, 'Inclusive Binary')
 ```
 
 
-![png](output_images/29_0.png)
+![png](output_images/output_29_0.png)
 
 
 
-![png](output_images/29_1.png)
+![png](output_images/output_29_1.png)
 
 
 **4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?**
@@ -379,7 +379,7 @@ print(pairs)
 ```
 
 
-![png](output_images/34_0.png)
+![png](output_images/output_34_0.png)
 
 
     [(528, 691)]
@@ -573,35 +573,35 @@ line_imgs, centroids = draw_lane_lines(sx, pairs[0][0], pairs[0][1], warp, True)
 ```
 
 
-![png](output_images/37_0.png)
+![png](output_images/output_37_0.png)
 
 
 
-![png](output_images/37_1.png)
+![png](output_images/output_37_1.png)
 
 
 
-![png](output_images/37_2.png)
+![png](output_images/output_37_2.png)
 
 
 
-![png](output_images/37_3.png)
+![png](output_images/output_37_3.png)
 
 
 
-![png](output_images/37_4.png)
+![png](output_images/output_37_4.png)
 
 
 
-![png](output_images/37_5.png)
+![png](output_images/output_37_5.png)
 
 
 
-![png](output_images/37_6.png)
+![png](output_images/output_37_6.png)
 
 
 
-![png](output_images/37_7.png)
+![png](output_images/output_37_7.png)
 
 
 We obtain equally good results for the curved lanes lines:
@@ -623,39 +623,39 @@ line_imgs, centroids = draw_lane_lines(sx, pairs[0][0], pairs[0][1], warp, True)
 ```
 
 
-![png](output_images/39_0.png)
+![png](output_images/output_39_0.png)
 
 
 
-![png](output_images/39_1.png)
+![png](output_images/output_39_1.png)
 
 
 
-![png](output_images/39_2.png)
+![png](output_images/output_39_2.png)
 
 
 
-![png](output_images/39_3.png)
+![png](output_images/output_39_3.png)
 
 
 
-![png](output_images/39_4.png)
+![png](output_images/output_39_4.png)
 
 
 
-![png](output_images/39_5.png)
+![png](output_images/output_39_5.png)
 
 
 
-![png](output_images/39_6.png)
+![png](output_images/output_39_6.png)
 
 
 
-![png](output_images/39_7.png)
+![png](output_images/output_39_7.png)
 
 
 
-![png](output_images/39_8.png)
+![png](output_images/output_39_8.png)
 
 
 **5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.**
@@ -689,7 +689,7 @@ plt.show()
 ```
 
 
-![png](output_images/42_0.png)
+![png](output_images/output_42_0.png)
 
 
 Given this polynomial finding the curvature is accomplished as follows:
@@ -750,7 +750,7 @@ plot_imgs([color_dark])
 ```
 
 
-![png](output_images/49_0.png)
+![png](output_images/output_49_0.png)
 
 
 
@@ -775,16 +775,16 @@ font = cv2.FONT_HERSHEY_SIMPLEX
 cv2.putText(result, curvature_info, (500,600), font, 1,(255,255,255),2)
 cv2.putText(result, shift_info, (500,650), font, 1,(255,255,255),2)
 
-plot_side_by_side(udimg2, "Original", result, 'Final Output_Images/')
+plot_side_by_side(udimg2, "Original", result, 'Final Output_Images/Output_')
 ```
 
 
-![png](output_images/50_0.png)
+![png](output_images/output_50_0.png)
 
 
 # Pipeline (video)
 
-**1. Provide a link to your final video output_images/. Your pipeline should perform reasonably well on the entire project video (wobbly lines are ok but no catastrophic failures that would cause the car to drive off the road!).**
+**1. Provide a link to your final video output_images/output_. Your pipeline should perform reasonably well on the entire project video (wobbly lines are ok but no catastrophic failures that would cause the car to drive off the road!).**
 
 The following is the result for the project video:
 
@@ -811,7 +811,7 @@ plot_imgs(myimgs[0:3])
 ```
 
 
-![png](output_images/62_0.png)
+![png](output_images/output_62_0.png)
 
 
 Then undistorted my own images:
@@ -824,7 +824,7 @@ plot_side_by_side(myimg, 'Original Image', myundistorted, 'Undistorted Image')
 ```
 
 
-![png](output_images/64_0.png)
+![png](output_images/output_64_0.png)
 
 
 # Own Images Result
@@ -840,7 +840,7 @@ plot_imgs([myimg1, myimg2])
 ```
 
 
-![png](output_images/67_0.png)
+![png](output_images/output_67_0.png)
 
 
 Worked the pipeline by creating a bird's eye view:
@@ -854,7 +854,7 @@ plot_side_by_side(org, 'Original Image', warp, 'Birds-eye image')
 ```
 
 
-![png](output_images/69_0.png)
+![png](output_images/output_69_0.png)
 
 
 Then, I obtained the binary images from them:
@@ -877,11 +877,11 @@ plot_side_by_side(org, 'Original Image', binary, 'Inclusive Binary')
 ```
 
 
-![png](output_images/71_0.png)
+![png](output_images/output_71_0.png)
 
 
 
-![png](output_images/71_1.png)
+![png](output_images/output_71_1.png)
 
 
 Then, used the same window method as before:
@@ -903,35 +903,35 @@ line_imgs, centroids = draw_lane_lines(sx, pairs[0][0], pairs[0][1], warp, True)
 ```
 
 
-![png](output_images/73_0.png)
+![png](output_images/output_73_0.png)
 
 
 
-![png](output_images/73_1.png)
+![png](output_images/output_73_1.png)
 
 
 
-![png](output_images/73_2.png)
+![png](output_images/output_73_2.png)
 
 
 
-![png](output_images/73_3.png)
+![png](output_images/output_73_3.png)
 
 
 
-![png](output_images/73_4.png)
+![png](output_images/output_73_4.png)
 
 
 
-![png](output_images/73_5.png)
+![png](output_images/output_73_5.png)
 
 
 
-![png](output_images/73_6.png)
+![png](output_images/output_73_6.png)
 
 
 
-![png](output_images/73_7.png)
+![png](output_images/output_73_7.png)
 
 
 Then detected the points:
@@ -963,7 +963,7 @@ plt.show()
 ```
 
 
-![png](output_images/75_0.png)
+![png](output_images/output_75_0.png)
 
 
 Calculated the curvature:
@@ -1021,7 +1021,7 @@ plot_imgs([color_dark])
 ```
 
 
-![png](output_images/81_0.png)
+![png](output_images/output_81_0.png)
 
 
 To put it in the original image:
@@ -1048,11 +1048,11 @@ font = cv2.FONT_HERSHEY_SIMPLEX
 cv2.putText(result, curvature_info, (500,600), font, 1,(255,255,255),2)
 cv2.putText(result, shift_info, (500,650), font, 1,(255,255,255),2)
 
-plot_side_by_side(udimg2, "Original", result, 'Final Output_Images/')
+plot_side_by_side(udimg2, "Original", result, 'Final Output_Images/Output_')
 ```
 
 
-![png](output_images/83_0.png)
+![png](output_images/output_83_0.png)
 
 
 # Own Videos Result
